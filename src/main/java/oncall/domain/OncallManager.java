@@ -22,19 +22,23 @@ public class OncallManager {
         return new UserSchedule(weekUsers.getCurrentUser(), month, dayOfWeek, day);
     }
 
-    public int getMonth() {
-        return month;
+    public UserSchedule assignSequenceUser(UserSchedule sequenceUser){
+        if(sequenceUser.isHolyDay()){
+            holidayUsers.swapOrder(sequenceUser.getUser());
+            return new UserSchedule(holidayUsers.getCurrentUser(), month, dayOfWeek, day);
+        }
+        weekUsers.swapOrder(sequenceUser.getUser());
+        return new UserSchedule(weekUsers.getCurrentUser(), month, dayOfWeek, day);
     }
 
-    public DayOfWeek getDayOfWeek() {
-        return dayOfWeek;
-    }
-
-    public int getDay() {
-        return day;
-    }
 
     public void setNextDay() {
+        if (isHolyDay()) {
+            holidayUsers.increaseIndex();
+        }
+        if(!isHolyDay()){
+            weekUsers.increaseIndex();
+        }
         this.dayOfWeek = dayOfWeek.nextDayOfWeek();
         this.day += 1;
     }

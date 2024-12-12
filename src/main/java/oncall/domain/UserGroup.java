@@ -2,6 +2,7 @@ package oncall.domain;
 
 import oncall.global.validator.UserValidator;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,11 +24,23 @@ public class UserGroup {
     }
 
     public User getCurrentUser(){
-        User responseUser = users.get(index);
+        return users.get(index);
+    }
+
+    public void increaseIndex(){
         index ++;
         if(index >= users.size()){
             index = 0;
         }
-        return responseUser;
     }
+
+    public void swapOrder(User currentUser){
+        int currentUserIndex = users.indexOf(currentUser);
+        int nextUserIndex = currentUserIndex + 1;
+        if(currentUserIndex == users.size() - 1) {
+            nextUserIndex = 0;
+        }
+        Collections.swap(users, nextUserIndex, currentUserIndex);
+    }
+
 }

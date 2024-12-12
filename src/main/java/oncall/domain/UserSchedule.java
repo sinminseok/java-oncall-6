@@ -15,6 +15,17 @@ public class UserSchedule {
         this.day = day;
     }
 
+    public boolean isHolyDay() {
+        if (dayOfWeek.isHoliday() || LegalHoliday.findByDate(month, day) != LegalHoliday.NONE) {
+            return true;
+        }
+        return false;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
     public String getUserName() {
         return user.getName();
     }
