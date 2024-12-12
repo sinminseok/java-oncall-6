@@ -43,6 +43,13 @@ public class OncallManager {
         this.day += 1;
     }
 
+    public int getMonthDay(){
+        if(month == 2){
+            return 28;
+        }
+        return 31;
+    }
+
     public boolean isHolyDay() {
         if (dayOfWeek.isHoliday() || LegalHoliday.findByDate(month, day) != LegalHoliday.NONE) {
             return true;
