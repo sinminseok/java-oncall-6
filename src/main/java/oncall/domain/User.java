@@ -13,4 +13,8 @@ public class User {
         UserValidator.validateUser(name);
         return new User(name);
     }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -1,4 +1,4 @@
 package oncall.dto;
 
-public record WorkDateRequest(int month, String day) {
+public record WorkDateRequest(int month, String dayOfWeek) {
 }
