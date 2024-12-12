@@ -10,5 +10,6 @@ public class OncallController {
     public void run(){
         WorkDateRequest workDateRequest = InputView.inputWorkDate();
         List<String> weekdaysUsers = InputView.inputWeekdaysUser();
+        List<String> holidayUSer = InputView.inputHolidayUSer();
     }
 }

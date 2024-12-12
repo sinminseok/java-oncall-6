@@ -6,8 +6,7 @@ import oncall.global.utils.Converter;
 
 import java.util.List;
 
-import static oncall.global.constants.ViewMessage.INPUT_MONTH_AND_DAY_MESSAGE;
-import static oncall.global.constants.ViewMessage.INPUT_WEEK_DAYS_USER_NAME;
+import static oncall.global.constants.ViewMessage.*;
 
 public class InputView {
     private InputView(){
@@ -23,7 +22,13 @@ public class InputView {
     }
 
     public static List<String> inputWeekdaysUser(){
-        System.out.println(INPUT_WEEK_DAYS_USER_NAME);
+        System.out.print(INPUT_WEEK_DAYS_USER_NAME);
+        String input = Console.readLine();
+        return Converter.splitDelimiter(input);
+    }
+
+    public static List<String> inputHolidayUSer(){
+        System.out.print(INPUT_HOLIDAY_USER_NAME);
         String input = Console.readLine();
         return Converter.splitDelimiter(input);
     }
