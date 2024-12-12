@@ -3,6 +3,7 @@ package oncall.controller;
 import oncall.domain.*;
 import oncall.dto.WorkDateRequest;
 import oncall.view.InputView;
+import oncall.view.OutputView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ public class OncallController {
             userSchedules.add(oncallManager.assignUser());
             oncallManager.setNextDay();
         }
+        OutputView.printSchedule(userSchedules);
 
     }
 }

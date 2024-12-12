@@ -14,4 +14,20 @@ public class UserSchedule {
         this.dayOfWeek = dayOfWeek;
         this.day = day;
     }
+
+    public String getUserName() {
+        return user.getName();
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public int getDay() {
+        return day;
+    }
 }

@@ -39,4 +39,8 @@ public enum DayOfWeek {
     public boolean isHoliday(){
         return this.equals(SATURDAY) || this.equals(SUNDAY);
     }
+
+    public String getName() {
+        return name;
+    }
 }
