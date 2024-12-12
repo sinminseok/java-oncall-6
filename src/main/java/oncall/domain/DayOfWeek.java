@@ -6,6 +6,7 @@ import oncall.global.exception.ErrorMessage;
 import java.util.Arrays;
 
 import static oncall.global.exception.ErrorMessage.ERROR_DAY_OF_WEEK;
+import static oncall.global.exception.ErrorMessage.ERROR_INVALID_INPUT;
 
 public enum DayOfWeek {
     MONDAY("월"),
@@ -33,7 +34,7 @@ public enum DayOfWeek {
         return Arrays.stream(values())
                 .filter(d -> d.name.equals(name))
                 .findFirst()
-                .orElseThrow(() -> new CustomException(ERROR_DAY_OF_WEEK));
+                .orElseThrow(() -> new CustomException(ERROR_INVALID_INPUT));
     }
 
     public boolean isHoliday(){
