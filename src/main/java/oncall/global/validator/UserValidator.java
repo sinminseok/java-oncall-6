@@ -21,20 +21,20 @@ public class UserValidator {
 
     private static void validateUserGroupCount(final List<String> names) {
         if (names.size() < MIN_USER_COUNT_RANGE || names.size() > MAX_USER_COUNT_RANGE) {
-            throw new CustomException(ERROR_USER_COUNT_RANGE);
+            throw new CustomException(ERROR_INVALID_INPUT);
         }
     }
 
     private static void validateDuplicateNames(final List<String> names) {
         Set<String> set = new HashSet<>(names);
         if (set.size() != names.size()) {
-            throw new CustomException(ERROR_USER_NAME_DUPLICATE);
+            throw new CustomException(ERROR_INVALID_INPUT);
         }
     }
 
     public static void validateUser(final String name) {
         if (name.length() < MIN_USER_NAME_RANGE || name.length() > MAX_USER_NAME_RANGE) {
-            throw new CustomException(ERROR_USER_NAME_RANGE);
+            throw new CustomException(ERROR_INVALID_INPUT);
         }
     }
 }
